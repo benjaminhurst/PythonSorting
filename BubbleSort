@@ -1,20 +1,40 @@
 import random
-a = list()
+import os
 
-arraySize = 10
+#Find out how many numbers the user would like to sort
+numArray = list()
+arraySize = 0
+print("How many numbers would you like to sort?")
+arraySize = int(input())
 
+#Append random numbers into array
 for x in range(arraySize):
-	a.append(random.randint(1,100))
+	numArray.append(random.randint(1,100))
 
+#Print numbers in original order
+print("The numbers generated are: ")
+for x in range(arraySize):
+	print("[",numArray[x],"]", end="")
+
+print()
+print()
+
+#The sorting part
 swapped = True
-while swapped: #just putting swapped is the same as swapped == True
+while swapped:
 	swapped = False
 	for i in range(arraySize - 1):
-		if a[i] > a[i+1]:
-			temp = a[i]
-			a[i] = a[i+1]
-			a[i+1] = temp
+		if numArray[i] > numArray[i+1]:
+			temp = numArray[i]
+			numArray[i] = numArray[i+1]
+			numArray[i+1] = temp
 			swapped = True
 
+
+#Print the newly sorted array
+print("The numbers in sorted order are:")
 for x in range(arraySize):
-	print(a[x])
+		print("[",numArray[x],"]", end="")
+
+print()
+
