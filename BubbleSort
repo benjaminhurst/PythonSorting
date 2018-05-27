@@ -1,5 +1,4 @@
 import random
-import os
 
 #Find out how many numbers the user would like to sort
 numArray = list()
