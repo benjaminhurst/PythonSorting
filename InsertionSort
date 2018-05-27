@@ -1,7 +1,37 @@
-for i in range(10):
-    key = a[i]
+import random
+
+#Find out how many numbers the user would like to sort
+numArray = list()
+arraySize = 0
+print("How many numbers would you like to sort?")
+arraySize = int(input())
+
+#Append random numbers into array
+for x in range(arraySize):
+	numArray.append(random.randint(1,100))
+
+#Print numbers in original order
+print("The numbers generated are: ")
+for x in range(arraySize):
+	print("[",numArray[x],"]", end="")
+
+print()
+print()
+
+#The sorting part
+for i in range(arraySize):
+    key = numArray[i]
     j = i-1
-    while j >= 0 and a[j] > key:
-    	a[j+1] = a[j]
+    while j >= 0 and numArray[j] > key:
+    	numArray[j+1] = numArray[j]
     	j = j-1
-    	a[j+1] = key
+    	numArray[j+1] = key
+
+
+#Print the newly sorted array
+print("The numbers in sorted order are:")
+for x in range(arraySize):
+		print("[",numArray[x],"]", end="")
+
+print()
+
